@@ -9,19 +9,24 @@ import {
     Icon,
     Link,
     Popover,
+    InputGroup,
     PopoverTrigger,
     PopoverContent,
+    InputLeftElement,
     useColorModeValue,
     useBreakpointValue,
+    Input,
     useDisclosure,
   } from '@chakra-ui/react';
   import {
     HamburgerIcon,
     CloseIcon,
+    Search2Icon,
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
   
+
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
   
@@ -56,12 +61,27 @@ import {
               fontFamily={'heading'}
               ml={12}
               width={{ base: "auto", md: '150px' }}
-              color={useColorModeValue('gray.800', 'white')}>
-              <img src='https://files.myglamm.com/site-images/original/MyGlamm-Logo_1.jpg'  />
               
+              color={useColorModeValue('gray.800', 'white')}>
+                   
+                <Flex height={50} width={ { base: "auto", md: 1000}}  >
+                <img src='https://files.myglamm.com/site-images/original/MyGlamm-Logo_1.jpg'  />
+                <InputGroup>
+    <InputLeftElement position={"absolute"}
+    left={10} mt={2}
+  display={{ base: 'none', md: 'flex' }} 
+      children={<Search2Icon color='gray.300' />}
+    />
+
+<Input mt={2} display={{ base: 'none', md: 'flex' }} placeholder='Find Lipstick, Eyeliner, Makeup Tutorial, etc' ml={"40px"} width={600}   />
+              s
+
+     </InputGroup>
+               </Flex>
+               
             </Text>
   
-            <Flex display={{ base: 'none', md: 'flex' }} ml={10}  >
+            <Flex display={{ base: 'none', md: 'flex' }} ml={10} mt={2}  >
               <DesktopNav />
             </Flex>
           </Flex>
@@ -109,15 +129,16 @@ import {
     return (
       <Stack direction={'row'} spacing={4}>
         {NAV_ITEMS.map((navItem) => (
-          <Box key={navItem.label}>
-            <Popover trigger={'hover'} placement={'bottom-start'}>
-              <PopoverTrigger>
+          <Box key={navItem.label} >
+            <Popover trigger={'hover'} placement={'bottom-start'} >
+              <PopoverTrigger >
                 <Link
                   p={2}
                   href={navItem.href ?? '#'}
                   fontSize={'sm'}
                   fontWeight={500}
                   color={linkColor}
+                  
                   _hover={{
                     textDecoration: 'none',
                     color: linkHoverColor,
@@ -252,41 +273,123 @@ import {
   const NAV_ITEMS= [
 
     {
-      label: 'Inspiration',
-      children: [
-        {
-          label: 'Explore Design Work',
-          subLabel: 'Trending Design to inspire you',
-          href: '#',
-        },
-        {
-          label: 'New & Noteworthy',
-          subLabel: 'Up-and-coming Designers',
-          href: '#',
-        },
-      ],
-    },
+        label: 'HOME',
+        href: '#',
+      },
     {
-      label: 'Find Work',
-      children: [
-        {
-          label: 'Job Board',
-          subLabel: 'Find your dream design job',
-          href: '#',
-        },
-        {
-          label: 'Freelance Projects',
-          subLabel: 'An exclusive list for contract work',
-          href: '#',
-        },
-      ],
-    },
-    {
-      label: 'Learn Design',
-      href: '#',
-    },
-    {
-      label: 'Hire Designers',
-      href: '#',
-    },
+        label: 'MAKEUP',
+        children: [
+          {
+            label: 'Lips',
+            subLabel: 'Lipstick',
+            href: '#',
+          },
+          {
+            label: 'Face',
+            subLabel: 'Fixing Powder',
+            href: '#',
+          },
+          {
+            label: 'Eyes',
+            subLabel: 'Eye Shadow',
+            href: '#',
+          },
+          {
+            label: 'Nails',
+            subLabel: 'Nail Polish',
+            href: '#',
+          },
+          {
+            label: 'Kits And Combos',
+            subLabel: 'Makeup Kits',
+            href: '#',
+          },
+          {
+            label: 'Makeup Accessories',
+            subLabel: 'Makeup Burshes',
+            href: '#',
+          },
+        ],
+      },
+      {
+        label: 'HAIR CARE',
+        children: [
+          {
+            label: 'Hair Care',
+            subLabel: 'Shampoo',
+            href: '#',
+          },
+          {
+            label: 'Hair Oil',
+            subLabel: 'Onion',
+            href: '#',
+          },
+          {
+            label: 'Serum',
+            subLabel: 'Hairfall Control',
+            href: '#',
+          },
+          
+        ],
+      },
+      {
+        label: 'SKIN CARE',
+        children: [
+          {
+            label: 'Cleansing Product',
+            subLabel: 'Face Wash',
+            href: '#',
+          },
+          {
+            label: 'Mask',
+            subLabel: 'Sheet Mask',
+            href: '#',
+          },
+          {
+            label: 'Moisturizer',
+            subLabel: 'Sunscreen Moisturizer',
+            href: '#',
+          },
+          
+        ],
+
+      },
+      {
+        label: 'SANITIZING CARE',
+        children: [
+          {
+            label: 'Sanitizing Care',
+            subLabel: 'Hand Sanitizer',
+            href: '#',
+          },
+        ],
+      },
+      {
+        label: 'COLLECTION',
+        children: [
+          {
+            label: 'Shop By Collection',
+            subLabel: 'MyGlamm',
+            href: '#',
+          },
+        ],
+      },
+      {
+        label: 'REWARDS',
+        href: '#',
+      },
+      {
+        label: 'MYGLAMM STUDIO',
+        children: [
+          {
+            label: 'Studio',
+            subLabel: 'Blogs',
+            href: '#',
+          },
+        ],
+      },
+      {
+        label: 'OFFERS',
+        href: '#',
+      },
   ];
