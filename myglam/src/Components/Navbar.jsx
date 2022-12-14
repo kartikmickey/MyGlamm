@@ -195,6 +195,7 @@ import {
     );
   };
   
+
   const MobileNavItem = ({ label, children, href }) => {
     const { isOpen, onToggle } = useDisclosure();
   
@@ -245,9 +246,11 @@ import {
     );
   };
   
+
  
   
   const NAV_ITEMS= [
+
     {
       label: 'Inspiration',
       children: [
