@@ -274,7 +274,7 @@ import {
 
     {
         label: 'HOME',
-        href: '#',
+        href: '/',
       },
     {
         label: 'MAKEUP',
