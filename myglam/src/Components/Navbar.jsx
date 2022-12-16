@@ -31,8 +31,10 @@ import {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
-      <Box>
+      <Box  >
         <Flex
+         pos="fixed"
+         zIndex={2}
           bg={useColorModeValue('white', 'gray.800')}
           color={useColorModeValue('gray.600', 'white')}
           minH={'60px'}
@@ -40,6 +42,7 @@ import {
           px={{ base: 4 }}
           borderBottom={1}
           borderStyle={'solid'}
+          w={'full'}
           borderColor={useColorModeValue('gray.200', 'gray.900')}
           align={'center'}>
           <Flex
@@ -81,12 +84,13 @@ import {
                
             </Text>
   
-            <Flex display={{ base: 'none', md: 'flex' }} ml={10} mt={2}  >
+            <Flex  display={{ base: 'none', md: 'flex' }} ml={10} mt={2}  >
               <DesktopNav />
             </Flex>
           </Flex>
   
           <Stack
+          //  pos="fixed"
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
             direction={'row'}
@@ -114,7 +118,7 @@ import {
           </Stack>
         </Flex>
   
-        <Collapse in={isOpen} animateOpacity>
+        <Collapse in={isOpen}  animateOpacity>
           <MobileNav />
         </Collapse>
       </Box>
@@ -127,7 +131,7 @@ import {
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
   
     return (
-      <Stack direction={'row'} spacing={4}>
+      <Stack  direction={'row'} spacing={4}>
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label} >
             <Popover trigger={'hover'} placement={'bottom-start'} >
@@ -208,7 +212,9 @@ import {
       <Stack
         bg={useColorModeValue('white', 'gray.800')}
         p={4}
+        // pos="fixed"
         display={{ md: 'none' }}>
+           <Box h={{ base: '60px', md: '98px' }}></Box>
         {NAV_ITEMS.map((navItem) => (
           <MobileNavItem key={navItem.label} {...navItem} />
         ))}
@@ -221,7 +227,7 @@ import {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
-      <Stack spacing={4} onClick={children && onToggle}>
+      <Stack spacing={4}  onClick={children && onToggle}>
         <Flex
           py={2}
           as={Link}

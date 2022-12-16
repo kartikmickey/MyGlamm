@@ -54,11 +54,12 @@ import { useNavigate, useParams } from "react-router-dom";
         // console.log(loading)
         return (
          <Container maxW={'7xl'}>
+           <Box h={{ base: '67px', md: '40px' }}></Box>
               <SimpleGrid
                 columns={{ base: 1, lg: 2 }}
                 spacing={{ base: 8, md: 10 }}
                 py={{ base: 18, md: 24 }}>
-                <Flex>
+                <Flex  >
                   <Image
                     rounded={'md'}
                     alt={'product image'}
@@ -68,10 +69,11 @@ import { useNavigate, useParams } from "react-router-dom";
                     fit={'cover'}
                     align={'center'}
                     w={'100%'}
+                    // pos="fixed"
                     h={{ base: '100%', sm: '400px', lg: '500px' }}
                   />
                 </Flex>
-                <Stack spacing={{ base: 6, md: 10 }}>
+                <Stack overflow={ { base: 'visible', md: 'scroll' }} h={{ base: '100%', sm: '460px', lg: '560px' }} spacing={{ base: 6, md: 10 }}>
                   <Box as={'header'}>
                     <Heading
                       lineHeight={1.1}
