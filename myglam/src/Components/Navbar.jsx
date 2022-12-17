@@ -25,6 +25,7 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
+import Sign from '../Pages/sign';
   
 
   export default function Navbar() {
@@ -95,15 +96,15 @@ import {
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
-            <Button
+            {/* <Button
               as={'a'}
               fontSize={'sm'}
               fontWeight={400}
               variant={'link'}
               href={'#'}>
               Sign In
-            </Button>
-            <Button
+            </Button> */}
+            {/* <Button
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
               fontWeight={600}
@@ -114,7 +115,8 @@ import {
                 bg: 'pink.300',
               }}>
               Sign Up
-            </Button>
+            </Button> */}
+            <Sign/>
           </Stack>
         </Flex>
   

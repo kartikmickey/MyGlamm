@@ -47,7 +47,8 @@ import { useNavigate, useParams } from "react-router-dom";
           website_link: ""}]);
     // const [loading, setLoading] = useState(true);
     useEffect(()=>{
-        axios.get(`http://localhost:3004/posts?_page=1&_limit=4&id=${id}`).then((res)=>setData(res.data))
+      
+        axios.get(`https://grumpy-colt-hoodie.cyclic.app//posts?_page=1&_limit=4&id=${id}`).then((res)=>setData(res.data))
        
     },[id])
          console.log(data);
