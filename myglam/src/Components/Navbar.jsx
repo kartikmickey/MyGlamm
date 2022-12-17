@@ -284,6 +284,7 @@ import {
       },
     {
         label: 'MAKEUP',
+        href: '/makeup',
         children: [
           {
             label: 'Lips',
