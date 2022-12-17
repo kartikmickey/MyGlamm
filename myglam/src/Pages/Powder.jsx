@@ -5,13 +5,13 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const MakeUp = ()=>{
+const Powder = ()=>{
     const [page, setPage] = useState(1);
     let navigate = useNavigate();
     const [total, setTotal] = useState(1)
     const [data, setData] = useState([])
     useEffect(()=>{
-        axios.get(`https://grumpy-colt-hoodie.cyclic.app//posts?_page=${page}&_limit=100`).then((res)=>{return(setData(res.data),
+        axios.get(`https://grumpy-colt-hoodie.cyclic.app//posts?_page=${page}&_limit=100&product_type=bronzer`).then((res)=>{return(setData(res.data),
      setTotal(res.headers["x-total-count"]))}
         );
     },[page]);
@@ -22,7 +22,7 @@ const MakeUp = ()=>{
         <Box h={{ base: '67px', md: '98px' }}>
 
 </Box>
-        <Heading margin={"auto"} mt={10} textAlign={'center'} textDecoration={'underline'} >MAKEUP</Heading>
+        <Heading margin={"auto"} mt={10} textAlign={'center'} textDecoration={'underline'} >FIXING POWDER</Heading>
         <Grid templateColumns={{ base: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }}  gap={6} margin={10} >
       {data?.map((e)=>(
           <Card key={e.id} 
@@ -76,4 +76,4 @@ const MakeUp = ()=>{
     )
 }
 
-export default MakeUp;
+export default Powder;

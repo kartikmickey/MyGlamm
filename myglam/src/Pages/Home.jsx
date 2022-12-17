@@ -13,7 +13,7 @@ const Home = () => {
     const [data, setData] = useState([])
     let navigate = useNavigate();
     useEffect(()=>{
-        axios.get(`http://localhost:3004/posts?_page=1&_limit=4`).then((res)=>setData(res.data));
+        axios.get(`https://grumpy-colt-hoodie.cyclic.app//posts?_page=1&_limit=4`).then((res)=>setData(res.data));
     },[])
 console.log(data);
     const div1= {
