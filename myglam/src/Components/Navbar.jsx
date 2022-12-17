@@ -291,12 +291,12 @@ import Sign from '../Pages/sign';
           {
             label: 'Lips',
             subLabel: 'Lipstick',
-            href: '#',
+            href: '/Lipstick',
           },
           {
             label: 'Face',
             subLabel: 'Fixing Powder',
-            href: '#',
+            href: '/facepowder',
           },
           {
             label: 'Eyes',
@@ -306,7 +306,7 @@ import Sign from '../Pages/sign';
           {
             label: 'Nails',
             subLabel: 'Nail Polish',
-            href: '#',
+            href: '/nailpolish',
           },
           {
             label: 'Kits And Combos',

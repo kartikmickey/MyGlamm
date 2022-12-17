@@ -1,7 +1,10 @@
 import { Routes , Route } from "react-router-dom"
 import Home from "../Pages/Home"
+import Lipstick from "../Pages/Lipstick";
 import MakeUp from "../Pages/Makeup";
-import Sign from "../Pages/sign";
+import Nails from "../Pages/Nails";
+import Powder from "../Pages/Powder";
+
 import SingleProduct from "../Pages/SingleProduct";
 
 const AllRoutes = ()=>{
@@ -11,7 +14,9 @@ const AllRoutes = ()=>{
        <Route path="/product" element={<Home/>} ></Route>
        <Route path="/product/:id" element={<SingleProduct/>} ></Route>
        <Route path="/makeup" element={<MakeUp/>} ></Route>
-       {/* <Route path="/sign" element={<Sign/>} ></Route> */}
+       <Route path="/Lipstick" element={<Lipstick/>} ></Route>
+       <Route path="/nailpolish" element={<Nails/>} ></Route>
+       <Route path="/facepowder" element={<Powder/>} ></Route>
        </Routes>
     )
 }

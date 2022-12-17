@@ -48,7 +48,7 @@ import { useNavigate, useParams } from "react-router-dom";
     // const [loading, setLoading] = useState(true);
     useEffect(()=>{
       
-        axios.get(`https://grumpy-colt-hoodie.cyclic.app//posts?_page=1&_limit=4&id=${id}`).then((res)=>setData(res.data))
+        axios.get(`https://grumpy-colt-hoodie.cyclic.app//posts?id=${id}`).then((res)=>setData(res.data))
        
     },[id])
          console.log(data);
@@ -89,7 +89,7 @@ import { useNavigate, useParams } from "react-router-dom";
                       fontWeight={300}
                       fontSize={'2xl'}>
                       ₹{
-                    Math.round(data[0].price * 45)
+                    Math.round(data[0].price * 45) || Math.round(Math.random()+1 *999)
                     }
                     </Text>
                   </Box>
@@ -175,7 +175,7 @@ import { useNavigate, useParams } from "react-router-dom";
                           <Text as={'span'} fontWeight={'bold'}>
                           Color:
                           </Text>{' '}
-                          {data[0].product_colors[0].colour_name || 'black'}
+                          {data[0]?.product_colors[0]?.colour_name || 'black'}
                         </ListItem>
                         <ListItem textTransform={'capitalize'} >
                           <Text as={'span'} fontWeight={'bold'}>
