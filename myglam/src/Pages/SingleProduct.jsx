@@ -46,6 +46,7 @@ import { useNavigate, useParams } from "react-router-dom";
           updated_at: "",
           website_link: ""}]);
     // const [loading, setLoading] = useState(true);
+    let navigate = useNavigate();
     useEffect(()=>{
       
         axios.get(`https://grumpy-colt-hoodie.cyclic.app//posts?id=${id}`).then((res)=>setData(res.data))
@@ -194,6 +195,7 @@ import { useNavigate, useParams } from "react-router-dom";
         
                   <Button
                     rounded={'none'}
+                    onClick={() => navigate(`/addtocart/${id}`)}
                     w={'full'}
                     mt={8}
                     size={'lg'}

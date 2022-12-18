@@ -26,9 +26,11 @@ const Nails = ()=>{
         <Grid templateColumns={{ base: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }}  gap={6} margin={10} >
       {data?.map((e)=>(
           <Card key={e.id} 
-          onClick={() => navigate(`/product/${e.id}`)}
+     
           maxW='sm'>
-          <CardBody>
+          <CardBody
+            onClick={() => navigate(`/product/${e.id}`)}
+          >
             <Image
               src= {e.api_featured_image
               }
@@ -48,10 +50,13 @@ const Nails = ()=>{
           <Divider />
           <CardFooter>
             <ButtonGroup spacing='2'>
-              <Button variant='solid' colorScheme='pink'>
+              <Button variant='solid' 
+              onClick={() => navigate(`/addtocart/${e.id}`)}
+              colorScheme='pink'>
                 Buy now
               </Button>
-              <Button variant='ghost' colorScheme='yellow'>
+              <Button variant='ghost'
+              onClick={() => navigate(`/addtocart/${e.id}`)} colorScheme='yellow'>
                 Add to cart
               </Button>
             </ButtonGroup>

@@ -1,4 +1,5 @@
 import { Routes , Route } from "react-router-dom"
+import Addtocart from "../Pages/Addtocart";
 import Home from "../Pages/Home"
 import Lipstick from "../Pages/Lipstick";
 import MakeUp from "../Pages/Makeup";
@@ -17,6 +18,7 @@ const AllRoutes = ()=>{
        <Route path="/Lipstick" element={<Lipstick/>} ></Route>
        <Route path="/nailpolish" element={<Nails/>} ></Route>
        <Route path="/facepowder" element={<Powder/>} ></Route>
+       <Route path="/addtocart/:id" element={<Addtocart/>} ></Route>
        </Routes>
     )
 }

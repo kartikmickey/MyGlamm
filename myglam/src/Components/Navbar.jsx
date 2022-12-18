@@ -8,6 +8,7 @@ import {
     Collapse,
     Icon,
     Link,
+    Tooltip,
     Popover,
     InputGroup,
     PopoverTrigger,
@@ -22,6 +23,7 @@ import {
     HamburgerIcon,
     CloseIcon,
     Search2Icon,
+    SearchIcon,
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
@@ -74,7 +76,10 @@ import Sign from '../Pages/sign';
     <InputLeftElement position={"absolute"}
     left={10} mt={2}
   display={{ base: 'none', md: 'flex' }} 
-      children={<Search2Icon color='gray.300' />}
+      children={<Tooltip hasArrow label='Search Product' bg='gray.300' color='black'>
+      <SearchIcon color='gray.500' />
+    </Tooltip>}
+      // {<Search2Icon color='gray.300' />}
     />
 
 <Input mt={2} display={{ base: 'none', md: 'flex' }} placeholder='Find Lipstick, Eyeliner, Makeup Tutorial, etc' ml={"40px"} width={600}   />
